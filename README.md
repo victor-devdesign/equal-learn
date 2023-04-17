@@ -36,7 +36,7 @@
 ## **Modelo de Banco de Dados**
 
 <aside>
-<img src="/icons/table_gray.svg" alt="/icons/table_gray.svg" width="40px" /> O modelo de banco de dados será projetado para atender às necessidades de armazenamento e recuperação eficiente dos dados da aplicação. Serão utilizadas tabelas para representar as entidades principais do sistema, como usuários, cursos, projetos, experiências do usuário e ideias diversas. Serão estabelecidos relacionamentos entre as tabelas, utilizando chaves primárias e estrangeiras para garantir a integridade dos dados. Além disso, serão definidos índices e restrições de integridade para otimizar o desempenho do banco de dados.
+ 💾 O modelo de banco de dados será projetado para atender às necessidades de armazenamento e recuperação eficiente dos dados da aplicação. Serão utilizadas tabelas para representar as entidades principais do sistema, como usuários, cursos, projetos, experiências do usuário e ideias diversas. Serão estabelecidos relacionamentos entre as tabelas, utilizando chaves primárias e estrangeiras para garantir a integridade dos dados. Além disso, serão definidos índices e restrições de integridade para otimizar o desempenho do banco de dados.
 
 </aside>
 
