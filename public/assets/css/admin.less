@@ -1,0 +1,168 @@
+@import 'sources/variables.less';
+@import 'sources/framework.less';
+/*components*/
+@import 'components/items-listing.less';
+
+
+html,
+body {
+    width: 100%;
+}
+
+.container-chat {
+    z-index: 900;
+    position: relative;
+
+    .chat-toggle {
+        position: fixed;
+        bottom: 5vh;
+        font-size: 1.5rem;
+        right: 2.5%;
+        padding: 1rem;
+        background: @cor-bootstrap-blue;
+        border-radius: 50%;
+        box-shadow: 0px 5px 10px rgba(157, 157, 157, .3);
+        color: white;
+        cursor: pointer;
+    }
+
+    .chat-wrapper {
+        position: fixed;
+        top: 43vh;
+        width: 25vw;
+        height: 45vh;
+        right: 2.5%;
+
+        @media screen and (max-width: 600px) {
+            width: 90vw;
+            height: 70vh;
+            top: 15vh;
+            right: 5vw;
+        }
+
+        .card {
+            box-shadow: 5px 5px 5px rgba(157, 157, 157, .3);
+            height: 100%;
+
+            .chat-close {
+                cursor: pointer;
+            }
+
+            .card-body {
+                overflow: auto;
+
+                .blockquote {
+                    font-size: 1rem;
+                    background-color: fade(@cor-bootstrap-blue, 10%);
+                    padding: 10px;
+                    width: 90%;
+                    border-radius: 15px;
+
+                    &.self {
+                        margin-left: 10%;
+                        text-align: right;
+                        background-color: fade(@cor-bootstrap-cyan, 10%);
+                    }
+
+                    p {
+                        margin: 0;
+                    }
+
+                    .blockquote-footer {
+                        margin-top: 0.25rem;
+
+                        &:before {
+                            content: '';
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.modal-dialog-scrollable {
+    height: 100% !important;
+}
+
+.toastContainer {
+    position: fixed;
+    z-index: 10000;
+    inset-inline: 0;
+    top: 0;
+    padding-top: 5vh;
+    padding-right: 0.5rem;
+    padding-block-end: 5vh;
+    display: grid;
+    justify-items: flex-end;
+    justify-content: flex-end;
+    pointer-events: none;
+
+    .alert {
+        padding: 0.25rem 0.5rem !important;
+        box-shadow: darkgrey 1px 2px 5px;
+    }
+}
+
+.loadingContainer {
+    backdrop-filter: blur(3px) saturate(0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    vertical-align: bottom;
+    filter: drop-shadow(0px 0px 3px) opacity(0.5);
+
+    span {
+        font-size: 5rem;
+    }
+
+}
+
+loader:first-of-type {
+    display: flex !important;
+}
+
+//-- Jquery UI
+.ui-autocomplete {
+    z-index: 2000 !important;
+}
+
+
+//-- Customização do cliente
+.dashboards {
+    .dashIcon {
+        position: absolute;
+        right: 2rem;
+        top: 1.5rem;
+        font-size: 5rem;
+        opacity: 0.2;
+        transform: rotate(345deg);
+        color: @cor-cliente-p1;
+    }
+
+    .card-body span {
+        font-size: 3rem;
+        margin-left: 1rem;
+    }
+}
+
+
+.textOverflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.modal-dialog {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+}
