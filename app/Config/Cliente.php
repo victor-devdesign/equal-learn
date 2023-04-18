@@ -11,7 +11,7 @@ class Cliente extends BaseConfig
      *
      * @var string
      */
-    public $cacheVersion = '0.0,1';
+    public $cacheVersion = '0.0.1';
 
     /**
      * Título padrão da página quando não informado
@@ -32,28 +32,35 @@ class Cliente extends BaseConfig
      *
      * @var string
      */
-    public $themeColor = '';
+    public $themeColor = '#6FBCD3';
 
     /**
      * Cor de tema secundária para ser utilizada em fins secundários
      *
      * @var string
      */
-    public $secondaryColor = '';
+    public $secondaryColor = '#1D1D45';
+
+    /**
+     * Cor de tema secundária para ser utilizada em fins secundários
+     *
+     * @var string
+     */
+    public $third_color = '#FFFFFF';
 
     /**
      * Favicon
      *
      * @var string
      */
-    public $favicon = '';
+    public $favicon = '/assets/img/favicon/color_logo.ico';
 
     /**
      * Logo
      *
      * @var string
      */
-    public $portalLogo = '';
+    public $portalLogo = '/assets/img/logo/logo.png';
 
     /**
      * Conjunto de definições para open graph
@@ -82,7 +89,7 @@ class Cliente extends BaseConfig
      *
      * @var string
      */
-    public $defaultUploader = 'local'; 
+    public $defaultUploader = 'local';
 
     public function __construct()
     {
@@ -106,5 +113,4 @@ class Cliente extends BaseConfig
             ],
         ];
     }
-
 }
