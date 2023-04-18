@@ -46,14 +46,14 @@ class Cliente extends BaseConfig
      *
      * @var string
      */
-    public $third_color = '#FFFFFF';
+    public $third_color = '#E6E6E6';
 
     /**
      * Favicon
      *
      * @var string
      */
-    public $favicon = '/assets/img/favicon/color_logo.ico';
+    public $favicon = '/assets/img/favicon/logo.ico';
 
     /**
      * Logo
