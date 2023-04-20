@@ -56,11 +56,25 @@ class Cliente extends BaseConfig
     public $favicon = '/assets/img/favicon/logo.ico';
 
     /**
-     * Logo
+     * Small Logo
      *
      * @var string
      */
-    public $portalLogo = '/assets/img/logo/logo.png';
+    public $smallLogo = '/assets/img/logo/small_logo.png';
+
+    /**
+     * Medium Logo
+     *
+     * @var string
+     */
+    public $mediumLogo = '/assets/img/logo/medium_logo.png';
+
+    /**
+     * Large Logo
+     *
+     * @var string
+     */
+    public $largeLogo = '/assets/img/logo/large_logo.png';
 
     /**
      * Conjunto de definições para open graph

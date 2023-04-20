@@ -34,7 +34,7 @@ class Template
             'cache_version' => getenv('CI_ENVIRONMENT') == 'development' ? date('YmdHis') : $this->cfgCliente->cacheVersion,
             'base_url' => base_url(),
             'favicon_url' => base_url($this->cfgCliente->favicon),
-            'logo_url' => base_url($this->cfgCliente->portalLogo),
+            'logo_url' => base_url($this->cfgCliente->smallLogo),
         ]);
         $this->parser->setData([
             'csrf_field' => csrf_field(),
