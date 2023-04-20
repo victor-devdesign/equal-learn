@@ -14,37 +14,48 @@
 # ENVIRONMENT
 #--------------------------------------------------------------------
 
-# CI_ENVIRONMENT = production
+# CI_ENVIRONMENT = development
+
+#--------------------------------------------------------------------
+# JWT
+#--------------------------------------------------------------------
+# JWT_SECRET = 'JWT SECRET KEY SAMPLE HERE'
 
 #--------------------------------------------------------------------
 # APP
 #--------------------------------------------------------------------
 
-# app.baseURL = ''
-# If you have trouble with `.`, you could also use `_`.
-# app_baseURL = ''
+# app.baseURL = 'http://localhost/equal-learn/public'
 # app.forceGlobalSecureRequests = false
-# app.CSPEnabled = false
+
+# app.sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler'
+# app.sessionCookieName = 'ccl'
+# app.sessionExpiration = 7200
+# app.sessionSavePath = null
+# app.sessionMatchIP = false
+# app.sessionTimeToUpdate = 300
+# app.sessionRegenerateDestroy = false
+
+# app.CSPEnabled = true
 
 #--------------------------------------------------------------------
 # DATABASE
 #--------------------------------------------------------------------
 
+# database.default.hostname = database
 # database.default.hostname = localhost
-# database.default.database = ci4
-# database.default.username = root
-# database.default.password = root
+# database.default.database = svi_equal_learn
+# database.default.username = docker
+# database.default.password = docker
 # database.default.DBDriver = MySQLi
 # database.default.DBPrefix =
-# database.default.port = 3306
 
 # database.tests.hostname = localhost
-# database.tests.database = ci4_test
+# database.tests.database = ci4
 # database.tests.username = root
 # database.tests.password = root
 # database.tests.DBDriver = MySQLi
 # database.tests.DBPrefix =
-# database.tests.port = 3306
 
 #--------------------------------------------------------------------
 # CONTENT SECURITY POLICY
@@ -99,8 +110,8 @@
 #--------------------------------------------------------------------
 
 # honeypot.hidden = 'true'
-# honeypot.label = 'Fill This Field'
-# honeypot.name = 'honeypot'
+# honeypot.label = 'HP Pooh'
+# honeypot.name = 'hp_pooh'
 # honeypot.template = '<label>{label}</label><input type="text" name="{name}" value=""/>'
 # honeypot.container = '<div style="display:none">{template}</div>'
 
@@ -114,21 +125,9 @@
 # security.headerName = 'X-CSRF-TOKEN'
 # security.cookieName = 'csrf_cookie_name'
 # security.expires = 7200
-# security.regenerate = true
-# security.redirect = false
+# security.regenerate = false
+# security.redirect = true
 # security.samesite = 'Lax'
-
-#--------------------------------------------------------------------
-# SESSION
-#--------------------------------------------------------------------
-
-# session.driver = 'CodeIgniter\Session\Handlers\FileHandler'
-# session.cookieName = 'ci_session'
-# session.expiration = 7200
-# session.savePath = null
-# session.matchIP = false
-# session.timeToUpdate = 300
-# session.regenerateDestroy = false
 
 #--------------------------------------------------------------------
 # LOGGER
