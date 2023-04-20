@@ -1,69 +1,70 @@
-# **Equal Learn Project**
+# Getting Started with Create React App
 
-## **Resumo Executivo**
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-<aside>
-💡 O projeto proposto é o desenvolvimento de uma plataforma de interações entre pessoas, grupos e empresas. A plataforma permitirá a criação de cursos, colaborações, áreas para base de conhecimento, compartilhamento de experiências do usuário e ideias diversas.
+## Available Scripts
 
-</aside>
+In the project directory, you can run:
 
-## **Visão Geral do Projeto**
+### `npm start`
 
-<aside>
-⚠️ A plataforma será desenvolvida para atender às necessidades de interações entre pessoas, grupos e empresas, com foco em educação e compartilhamento de conhecimentos. A plataforma permitirá que os usuários criem cursos, colaborem em projetos, compartilhem suas experiências e ideias, e acessem uma base de conhecimento para encontrar informações relevantes. A plataforma terá uma interface de usuário moderna e responsiva, com recursos avançados de pesquisa, integração com mídias sociais e recursos de colaboração em tempo real.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-</aside>
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## **Arquitetura do Sistema**
+### `npm test`
 
-<aside>
-⌨️ O sistema será desenvolvido seguindo uma arquitetura de três camadas: frontend, backend e banco de dados.
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-1. Frontend: O frontend será desenvolvido utilizando o React.js como framework JavaScript, com os compiladores CSS Less e Bootstrap5 para a criação da interface de usuário. O frontend será responsável pela apresentação dos dados e pela interação com o usuário, incluindo o gerenciamento de eventos, validação de entrada de dados e chamadas aos APIs do backend.
-2. Backend: O backend será desenvolvido em PHP, que é uma linguagem de script amplamente utilizada para o desenvolvimento de aplicações web. Ele será responsável pelo processamento das requisições do frontend, autenticação e autorização de usuários, manipulação de dados e integração com APIs de terceiros, como a API de login do Google e a API de incorporação de vídeos do YouTube.
-3. Banco de Dados: O banco de dados será desenvolvido utilizando o MySQL, que é um sistema de gerenciamento de banco de dados popular e amplamente utilizado. Ele será responsável pelo armazenamento dos dados da aplicação, como informações de usuários, cursos, projetos, experiências do usuário e ideias diversas, bem como as informações necessárias para a autenticação dos usuários, como tokens de acesso e permissões de acesso aos recursos da aplicação.
-</aside>
+### `npm run build`
 
-## **Integrações com Terceiros**
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-<aside>
-🧑‍💼 A plataforma terá integrações com terceiros para fornecer funcionalidades avançadas, como login com Google e upload de vídeos com incorporação de vídeos do YouTube. Para isso, serão utilizadas as seguintes APIs:
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-1. Google Login API: Esta API permitirá que os usuários façam login na plataforma utilizando suas contas do Google. Serão implementados mecanismos de autenticação e autorização para garantir a segurança do acesso aos recursos da aplicação.
-2. YouTube API: Esta API permitirá que os usuários façam upload de vídeos para os cursos e projetos na plataforma, com a capacidade de incorporar vídeos do YouTube diretamente na aplicação. Serão implementadas funcionalidades de gerenciamento de vídeos, como upload, visualização e exclusão de vídeos.
-</aside>
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## **Modelo de Banco de Dados**
+### `npm run eject`
 
-<aside>
- 💾 O modelo de banco de dados será projetado para atender às necessidades de armazenamento e recuperação eficiente dos dados da aplicação. Serão utilizadas tabelas para representar as entidades principais do sistema, como usuários, cursos, projetos, experiências do usuário e ideias diversas. Serão estabelecidos relacionamentos entre as tabelas, utilizando chaves primárias e estrangeiras para garantir a integridade dos dados. Além disso, serão definidos índices e restrições de integridade para otimizar o desempenho do banco de dados.
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-</aside>
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-## **Principais Funcionalidades**
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-<aside>
-📌 A plataforma terá as seguintes funcionalidades principais:
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-1. Criação de Cursos: Os usuários (universitários e empresas) poderão criar cursos sobre diversos temas, com a capacidade de adicionar conteúdos, como aulas, materiais de apoio, avaliações e recursos adicionais. Permitindo também a emissão de certificados após a conclusão.
-2. Colaboração em Projetos: Os usuários poderão colaborar em projetos, com a capacidade de criar equipes, compartilhar documentos, trocar mensagens e gerenciar tarefas em tempo real.
-3. Base de Conhecimento: A plataforma terá uma base de conhecimento, onde os usuários poderão encontrar informações relevantes, como tutoriais, artigos, dicas e melhores práticas.
-4. Compartilhamento de Experiências do Usuário: Os usuários poderão compartilhar suas experiências, feedbacks e opiniões sobre cursos, projetos e outras atividades na plataforma.
-5. Integração com Terceiros: A plataforma terá integrações com terceiros, como login com Google para autenticação dos usuários e upload de vídeos com incorporação de vídeos do YouTube para enriquecer os cursos e projetos.
-</aside>
+## Learn More
 
-## **Plano Free**
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### Paradigmas do Ambiente:
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-<aside>
-💡 Regras de negocio:
+### Code Splitting
 
-1. O acesso será gratuito, usando um e-mail e senha para cadastro inicial.
-2. Armazenaremos as seguintes informações sensíveis com o cadastro avançado (necessário para emissão de certificado): Nome completo, CPF, idade e endereço.
-3. O acesso será dividido em Professor solidário (Universitários) e aluno.
-4. Os cursos serão no formato de vídeo, divididos por matéria e tema e com matéria escrito como referencia.
-5. 
-</aside>
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-## **Plano Pago**
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
