@@ -1,0 +1,105 @@
+/* ---------------------------------------------
+----------------- IMPORTS ----------------------
+--------------------------------------------- */
+/* ---------------------------------------------
+------------------ STYLES ----------------------
+--------------------------------------------- */
+.header-default {
+  position: relative;
+  background-color: transparent;
+  max-width: 100vw;
+  height: fit-content;
+  transition: all .5s ease 0s;
+}
+.header-default .bg-field {
+  background-color: #27292a;
+  border-radius: 50px;
+  border: none;
+  padding: 0px 15px 0px 45px;
+  height: 8vh;
+}
+.header-default .nav-default {
+  min-height: 50px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0px;
+  border-radius: 50px;
+}
+.header-default .nav-default #search {
+  position: relative;
+}
+.header-default .nav-default #search input {
+  font-size: 20px;
+  color: #6FBCD3;
+}
+.header-default .nav-default #search input::placeholder {
+  color: #BFBFBF;
+}
+.header-default .nav-default #search input:focus {
+  outline: none;
+}
+.header-default .nav-default #search input:focus + i {
+  color: #6FBCD3;
+}
+.header-default .nav-default #search i {
+  position: absolute;
+  top: 30%;
+  left: 15px;
+  color: #BFBFBF;
+  font-size: 20px;
+  width: 18px;
+  height: 18px;
+}
+.header-default .nav-default .logo {
+  border-right: 1px solid #27292a;
+  height: fit-content;
+  width: fit-content;
+  padding-right: 5%;
+  margin-right: 5%;
+  transition: all 0.3s ease 0s;
+}
+.header-default .nav-default .logo img {
+  width: 10vw;
+}
+.header-default .nav-default .nav {
+  display: inline-flex;
+  justify-content: flex-end;
+  vertical-align: middle;
+  text-align: right;
+  margin-top: 0px;
+  margin-right: 0px;
+  transition: all 0.3s ease 0s;
+  position: relative;
+}
+.header-default .nav-default .nav li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  transition: all 0.3s ease 0s;
+}
+.header-default .nav-default .nav li a {
+  display: block;
+  font-weight: 400;
+  font-size: 20px;
+  text-decoration: none;
+  letter-spacing: .3px;
+  color: #E6E6E6;
+  border: transparent;
+  border-radius: 18px;
+  padding: 13px 10px;
+  transition: all 0.3s ease 0s;
+}
+.header-default .nav-default .nav li a:hover {
+  color: #6FBCD3;
+}
+.header-default .nav-default .nav li:last-child img {
+  width: 36px;
+  border-radius: 50%;
+  margin-left: 5px;
+}
+.header-default .nav-default .nav li:last-child:hover {
+  background-color: rgba(39, 41, 42, 0.25);
+}

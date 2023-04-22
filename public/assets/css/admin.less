@@ -1,5 +1,5 @@
 //-- IMPORT SOURCES
-@import 'sources/variables.less'; // Varáveis LESS
+@import '../../../src/assets/css/variables.less'; // Varáveis LESS
 @import 'sources/bg.less'; // Definição de background baseado nas cores do projeto
 @import 'sources/borders.less'; // Definição de borders baseado nas cores do projeto
 @import 'sources/buttons.less'; // Definição de buttons baseado nas cores do projeto
@@ -8,9 +8,26 @@
 //-- IMPORT COMPONENTS
 // @import 'components/';
 
-//-- ESTILIZAÇÃO GLOBAL
+/* ---------------------------------------------
+------------ FONT & TYPOGRAPHY -----------------
+--------------------------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900");
+
+/* ---------------------------------------------
+--------------- GLOBAL STYLES ------------------
+--------------------------------------------- */
 
 html,
 body {
-    width: 100%;
+    width: 100vw;
+    overflow-x: hidden;
+
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 400;
+    background-color: @color-third-05;
+    font-size: 16px;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }

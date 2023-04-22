@@ -1,0 +1,152 @@
+/* ---------------------------------------------
+----------------- IMPORTS ----------------------
+--------------------------------------------- */
+
+@import '../../assets/css/variables.less'; // Varáveis LESS
+
+/* ---------------------------------------------
+------------------ STYLES ----------------------
+--------------------------------------------- */
+
+.header-default {
+    position: relative;
+
+    background-color: transparent;
+
+    max-width: 100vw;
+    height: fit-content;
+
+    transition: all .5s ease 0s;
+
+    .bg-field {
+        background-color: @color-fourth;
+
+        border-radius: 50px;
+        border: none;
+
+        padding: 0px 15px 0px 45px;
+
+        height: 8vh;
+    }
+
+    .nav-default {
+        min-height: 50px;
+        background: transparent;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 15px 0px;
+        border-radius: 50px;
+
+        #search {
+            position: relative;
+
+            input {
+                font-size: 20px;
+                color: @color-primary;
+
+                &::placeholder {
+                    color: @color-third-03;
+                }
+
+                &:focus {
+                    outline: none;
+                }
+
+                &:focus+i {
+                    color: @color-primary;
+                }
+            }
+
+            i {
+                position: absolute;
+                top: 30%;
+                left: 15px;
+
+                color: @color-third-03;
+                font-size: 20px;
+
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        .logo {
+            border-right: 1px solid @color-fourth;
+
+            height: fit-content;
+            width: fit-content;
+
+            padding-right: 5%;
+            margin-right: 5%;
+
+            transition: all 0.3s ease 0s;
+
+            img {
+                width: 10vw;
+            }
+        }
+
+        .nav {
+            display: inline-flex;
+            justify-content: flex-end;
+            vertical-align: middle;
+
+            text-align: right;
+            margin-top: 0px;
+            margin-right: 0px;
+
+            transition: all 0.3s ease 0s;
+
+            position: relative;
+
+            li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                padding: 0 10px;
+
+                transition: all 0.3s ease 0s;
+
+                a {
+                    display: block;
+
+                    font-weight: 400;
+                    font-size: 20px;
+
+                    text-decoration: none;
+                    letter-spacing: .3px;
+
+                    color: @color-third;
+
+                    border: transparent;
+                    border-radius: 18px;
+
+                    padding: 13px 10px;
+
+                    transition: all 0.3s ease 0s;
+
+                    &:hover {
+                        color: @color-primary;
+                    }
+                }
+
+                &:last-child {
+                    img {
+                        width: 36px;
+                        border-radius: 50%;
+                        margin-left: 5px;
+                    }
+
+                    &:hover {
+                        background-color: @color-fourth-alpha-25;
+                    }
+                }
+            }
+        }
+    }
+
+}
