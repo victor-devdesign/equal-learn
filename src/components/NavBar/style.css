@@ -16,7 +16,7 @@
   border-radius: 50px;
   border: none;
   padding: 0px 15px 0px 45px;
-  height: 8vh;
+  height: 60px;
 }
 .header-default .nav-default {
   min-height: 50px;
@@ -31,7 +31,7 @@
   position: relative;
 }
 .header-default .nav-default #search input {
-  font-size: 20px;
+  font-size: 16px;
   color: #6FBCD3;
 }
 .header-default .nav-default #search input::placeholder {
@@ -40,15 +40,15 @@
 .header-default .nav-default #search input:focus {
   outline: none;
 }
-.header-default .nav-default #search input:focus + i {
+.header-default .nav-default #search input:focus + svg {
   color: #6FBCD3;
 }
-.header-default .nav-default #search i {
+.header-default .nav-default #search svg {
   position: absolute;
-  top: 30%;
+  top: 36%;
   left: 15px;
   color: #BFBFBF;
-  font-size: 20px;
+  font-size: 16px;
   width: 18px;
   height: 18px;
 }
@@ -83,7 +83,7 @@
 .header-default .nav-default .nav li a {
   display: block;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 16px;
   text-decoration: none;
   letter-spacing: .3px;
   color: #E6E6E6;

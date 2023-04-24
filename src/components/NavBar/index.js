@@ -1,5 +1,8 @@
 import './style.css'
 
+//-- Icon Import
+import { FaSearch } from "react-icons/fa";
+
 export const NavBar = (options) => {
 
     let logo = options.url + 'assets/img/logo/small_logo.png',
@@ -19,7 +22,7 @@ export const NavBar = (options) => {
                             <div className="search-input">
                                 <form id="search" action="#">
                                     <input className="bg-field" type="text" placeholder="Pesquisar ..." id='search_index' name="search_index" onkeypress="handle" />
-                                    <i className="fa fa-search"></i>
+                                    <FaSearch />
                                 </form>
                             </div>
                             {/* <!-- ----- Menu ----- */}
