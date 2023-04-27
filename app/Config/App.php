@@ -498,5 +498,7 @@ class App extends BaseConfig
 
         //-- Remove fingerprint do servidor
         header_remove("X-Powered-By");
+
+        // Other configurations...
     }
 }

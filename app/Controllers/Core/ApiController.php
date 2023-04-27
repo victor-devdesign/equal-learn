@@ -9,24 +9,8 @@ class ApiController extends ResourceController
 {
     use ResponseTrait;
 
-    /**
-     * Model de usuarios
-     *
-     * @var \App\Models\UsersModel
-     */
-    protected $mUsers;
-
-    /**
-     * Model de parâmetros
-     *
-     * @var \App\Models\ParamsModel
-     */
-    protected $mParams;
-
     public function __construct()
     {
-        $this->mUsers = model('\App\Models\UsersModel');
-        $this->mParams = model('\App\Models\ParamsModel');
         $this->response = \CodeIgniter\Config\Services::response();
         helper(['framework', 'projeto']);
     }
