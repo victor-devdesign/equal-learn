@@ -7,7 +7,6 @@ use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
 use CodeIgniter\Filters\Honeypot;
 use CodeIgniter\Filters\InvalidChars;
-use CodeIgniter\Filters\SecureHeaders;
 use App\Filters\AuthFilter;
 
 class Filters extends BaseConfig
@@ -22,7 +21,7 @@ class Filters extends BaseConfig
         'auth'          => AuthFilter::class, //-- Filtro de autenticação de padrão
         'invalid_chars'  => InvalidChars::class,
         'honeypot'      => Honeypot::class,
-        'secure_headers' => SecureHeaders::class,
+        'cors' => \Fluent\Cors\Filters\CorsFilter::class,
     ];
 
     /**
@@ -36,17 +35,14 @@ class Filters extends BaseConfig
                 'except' => [
                     'Api/Payments/Notification/*',
                     'tools/cron/*',
+                    'Api/MetaTags/getMetaTags'
                 ],
 
             ],
             'invalid_chars',
             'auth',
         ],
-        'after' => [
-            'toolbar',
-            // 'honeypot',
-            // 'secure_headers',
-        ],
+        'after' => [],
     ];
 
     /**
@@ -72,5 +68,6 @@ class Filters extends BaseConfig
     public array $filters = [
         'auth_admin' => ['before' => ['admin', 'admin/*'], 'after' => ['admin', 'admin/*']],
         'auth_assistant' => ['before' => ['assistant', 'assistant/*'], 'after' => ['assistant', 'assistant/*']],
+        'cors' => ['after' => ['Api/*']],
     ];
 }

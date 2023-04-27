@@ -12,12 +12,17 @@ class App extends BaseConfig
      * Base Site URL
      * --------------------------------------------------------------------------
      *
-     * URL to your CodeIgniter root. Typically, this will be your base URL,
+     * URL to your CodeIgniter root. Typically this will be your base URL,
      * WITH a trailing slash:
      *
      *    http://example.com/
+     *
+     * If this is not set then CodeIgniter will try guess the protocol, domain
+     * and path to your installation. However, you should always configure this
+     * explicitly and never rely on auto-guessing, especially in production
+     * environments.
      */
-    public string $baseURL = 'http://localhost:8080/';
+    public string $baseURL = '';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
@@ -59,7 +64,7 @@ class App extends BaseConfig
      *
      * WARNING: If you set this to 'PATH_INFO', URIs will always be URL-decoded!
      */
-    public string $uriProtocol = 'REQUEST_URI';
+    public string $uriProtocol = 'PATH_INFO';
 
     /**
      * --------------------------------------------------------------------------
@@ -83,7 +88,7 @@ class App extends BaseConfig
      *
      * If false, no automatic detection will be performed.
      */
-    public bool $negotiateLocale = false;
+    public bool $negotiateLocale = true;
 
     /**
      * --------------------------------------------------------------------------
@@ -349,7 +354,7 @@ class App extends BaseConfig
      *
      * @deprecated Use `Config\Security` $tokenName property instead of using this property.
      */
-    public string $CSRFTokenName = 'csrf_test_name';
+    public string $CSRFTokenName = 'csrf_token';
 
     /**
      * --------------------------------------------------------------------------
@@ -371,7 +376,7 @@ class App extends BaseConfig
      *
      * @deprecated Use `Config\Security` $cookieName property instead of using this property.
      */
-    public string $CSRFCookieName = 'csrf_cookie_name';
+    public string $CSRFCookieName = 'csrf_token';
 
     /**
      * --------------------------------------------------------------------------
@@ -404,7 +409,7 @@ class App extends BaseConfig
      *
      * @deprecated Use `Config\Security` $redirect property instead of using this property.
      */
-    public bool $CSRFRedirect = false;
+    public bool $CSRFRedirect = true;
 
     /**
      * --------------------------------------------------------------------------
@@ -442,4 +447,56 @@ class App extends BaseConfig
      * @see http://www.w3.org/TR/CSP/
      */
     public bool $CSPEnabled = false;
+
+    //--- Customização
+
+    /**
+     * Limite de tamanho em MB para upload de imagem
+     *
+     * @var integer
+     */
+    public $uploadImgLimit = 3;
+
+    /**
+     * Limite de tamanho em MB para upload de vídeos
+     *
+     * @var integer
+     */
+    public $uploadMovLimit = 50;
+
+    /**
+     * Limite de tamanho em MB para upload de audios
+     *
+     * @var integer
+     */
+    public $uploadSndLimit = 5;
+
+    /**
+     * Limite de tamanho em MB para upload de qualquer tipo de arquivo não especificado
+     *
+     * @var integer
+     */
+    public $uploadLimit = 10;
+
+    /**
+     * Versão de cache de arquivos estáticos
+     *
+     * @var string
+     */
+    public $cacheVersion = '1.0.0';
+
+    public function __construct()
+    {
+        parent::__construct();
+        //-- Customização de caminhos para facilitar exclusão de sessões antigas
+        $this->sessionSavePath .= '/' . date('Y-m-d') . '/';
+
+        //-- Definição de configurações PHP
+        date_default_timezone_set($this->appTimezone);
+        ini_set('post_max_size', ($this->uploadMovLimit + 8) . 'M');
+        ini_set('upload_max_filesize', ($this->uploadMovLimit + 2) . 'M');
+
+        //-- Remove fingerprint do servidor
+        header_remove("X-Powered-By");
+    }
 }

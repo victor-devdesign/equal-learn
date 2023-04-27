@@ -19,7 +19,8 @@
 	},
 	"require": {
 		"php": "^7.4 || ~8.0.0 || ~8.1.0 || ~8.2.0",
-		"codeigniter4/framework": "^4.3.2"
+		"codeigniter4/framework": "^4.3.2",
+		"agungsugiarto/codeigniter4-cors": "^3.0"
 	},
 	"require-dev": {
 		"codeigniter/coding-standard": "^1.0",

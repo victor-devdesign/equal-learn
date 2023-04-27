@@ -14,24 +14,24 @@ class Honeypot extends BaseConfig
     /**
      * Honeypot Label Content
      */
-    public string $label = 'Fill This Field';
+    public string $label = 'Pooh Captcha';
 
     /**
      * Honeypot Field Name
      */
-    public string $name = 'honeypot';
+    public string $name = '_pooh';
 
     /**
      * Honeypot HTML Template
      */
-    public string $template = '<label>{label}</label><input type="text" name="{name}" value="">';
+    public string $template = '<label>{honeypot_label}</label><input type="text" name="{honeypot_name}" value=""/>';
 
     /**
      * Honeypot container
      *
      * If you enabled CSP, you can remove `style="display:none"`.
      */
-    public string $container = '<div style="display:none">{template}</div>';
+    public string $container = '<div class="d-none">{template}</div>';
 
     /**
      * The id attribute for Honeypot container tag
@@ -39,4 +39,20 @@ class Honeypot extends BaseConfig
      * Used when CSP is enabled.
      */
     public string $containerId = 'hpc';
+
+    /**
+     * Retorna o campo honeypot
+     *
+     * @return string
+     */
+    public function getField()
+    {
+        $parser = \Config\Services::parser();
+        $field = $parser->setData([
+            'honeypot_name' => $this->name,
+            'honeypot_label' => $this->label,
+        ])->renderString($this->template);
+        return '<div class="d-none">' . $field . '</div>';
+    }
+
 }

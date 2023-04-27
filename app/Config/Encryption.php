@@ -81,12 +81,9 @@ class Encryption extends BaseConfig
      */
     public string $authKeyInfo = '';
 
-    /**
-     * Cipher to use.
-     * This setting is only used by OpenSSLHandler.
-     *
-     * Set to 'AES-128-CBC' to decrypt encrypted data that encrypted
-     * by CI3 Encryption default configuration.
-     */
-    public string $cipher = 'AES-256-CTR';
+    public function __construct()
+    {
+        parent::__construct();
+        $this->key = hex2bin('8c463a94aa38fdeee7d52b1748c06f1bfdb2801021d06a674e0318fa7c90c42f');
+    }
 }
