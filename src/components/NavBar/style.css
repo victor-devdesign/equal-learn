@@ -61,7 +61,7 @@
   transition: all 0.3s ease 0s;
 }
 .header-default .nav-default .logo img {
-  width: 10vw;
+  width: 5vw;
 }
 .header-default .nav-default .nav {
   display: inline-flex;
@@ -93,6 +93,9 @@
   transition: all 0.3s ease 0s;
 }
 .header-default .nav-default .nav li a:hover {
+  color: #6FBCD3;
+}
+.header-default .nav-default .nav li a.active {
   color: #6FBCD3;
 }
 .header-default .nav-default .nav li:last-child img {
