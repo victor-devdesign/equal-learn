@@ -63,16 +63,6 @@ export const Carrousel = (options) => {
                         <img src={logo} className="col-12" height="750px" />
                     </div>
                 </SwiperSlide>
-                <SwiperSlide>
-                    <div className="carrousel-container">
-                        <img src={logo} className="col-12" height="750px" />
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide>
-                    <div className="carrousel-container">
-                        <img src={logo} className="col-12" height="750px" />
-                    </div>
-                </SwiperSlide>
 
             </Swiper>
         </div>

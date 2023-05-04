@@ -5,10 +5,10 @@
 ------------------ STYLES ----------------------
 --------------------------------------------- */
 .carrousel-swiper {
-  border-radius: 40px;
+  border-radius: 28px;
 }
 .carrousel-swiper .carrousel-container {
-  border-radius: 40px;
+  border-radius: 28px;
   width: 100%;
   height: fit-content;
   display: flex;
@@ -16,7 +16,7 @@
   align-items: center;
 }
 .carrousel-swiper .carrousel-container img {
-  border-radius: 40px;
+  border-radius: 28px;
   width: 100%;
   background-color: transparent;
 }
