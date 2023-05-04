@@ -6,6 +6,16 @@ import { FaSearch } from "react-icons/fa";
 
 export const NavBar = (data) => {
 
+    const activePage = (page) => {
+        if (window.location.pathname === "/" + page) {
+            return "active";
+        } else if (window.location.pathname === "/" && page == "home") {
+            return "active";
+        } else {
+            return "";
+        }
+    }
+
     return (
         <header className="header-default">
             <div className="container">
@@ -13,7 +23,7 @@ export const NavBar = (data) => {
                     <div className="col-12">
                         <nav className="nav-default">
                             {/* <!-- ----- Logo ----- */}
-                            <a href="index.html" className="logo">
+                            <a href="/" className="logo">
                                 <img src={data.logo} alt="Logo" />
                             </a>
                             {/* <!-- ----- Search ----- */}
@@ -25,10 +35,9 @@ export const NavBar = (data) => {
                             </div>
                             {/* <!-- ----- Menu ----- */}
                             <ul className="nav">
-                                <li><a href="index.html" className="active">Home</a></li>
-                                <li><a href="browse.html">Browse</a></li>
-                                <li><a href="details.html">Details</a></li>
-                                <li><a href="streams.html">Streams</a></li>
+                                <li><a href="/" className={activePage('home')}>Home</a></li>
+                                <li><a href="/about" className={activePage('about')}>Sobre Nós</a></li>
+                                <li><a href="/contact" className={activePage('contact')}>Contate-nos</a></li>
                                 <Profile
                                     logged={typeof data.profile !== "undefined" && typeof data.name !== "undefined"}
                                     profile={data.profile}

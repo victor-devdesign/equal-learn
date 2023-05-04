@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react';
-import { NavBar } from './components/NavBar/index.js';
-import { Carrousel } from './components/Carrousel/index.js';
-import { Loader } from './components/Loader/index.js';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home/index.js";
+import About from "./pages/About/index.js";
+import Contact from "./pages/Contact/index.js";
+import Layout from "./Layout.js";
+
+import Loader from './components/Loader/index.js';
 
 const API_URL = "http://localhost/equal-learn/public/Api/";
 
@@ -26,7 +31,7 @@ function getData() {
   };
 }
 
-export const App = () => {
+export default function App() {
 
   const [data, setData] = useState(null);
 
@@ -43,24 +48,14 @@ export const App = () => {
   }
 
   return (
-    <div className="row">
-      <div className="col-12">
-        <NavBar logo={data.logo.small} profile={data.user.profile} name={data.user.name} />
-      </div>
-      <div className="col-12">
-        <main>
-          <div className="container">
-            <div className="card">
-              <div className="card-body">
-                <Carrousel url={data.url} />
-                <h5 className="card-title">Título do card</h5>
-                <p className="card-text">Texto do card</p>
-                <a href="#" className="btn btn-primary">Ir para algum lugar</a>
-              </div>
-            </div>
-          </div>
-        </main>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout data={data} />}>
+          <Route index element={<Home data={data} />} />
+          <Route path="about" element={<About data={data} />} />
+          <Route path="contact" element={<Contact data={data} />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
-};
+}

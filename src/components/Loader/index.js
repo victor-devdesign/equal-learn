@@ -1,6 +1,6 @@
 import './style.css'
 
-export const Loader = () => {
+export default function Loader() {
 
     return (
         <div className="loading-container">

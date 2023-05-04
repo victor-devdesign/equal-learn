@@ -12,7 +12,7 @@
   transition: all .5s ease 0s;
 }
 .header-default .bg-field {
-  background-color: #27292a;
+  background-color: #404040;
   border-radius: 50px;
   border: none;
   padding: 0px 15px 0px 45px;
@@ -53,7 +53,7 @@
   height: 18px;
 }
 .header-default .nav-default .logo {
-  border-right: 1px solid #27292a;
+  border-right: 1px solid #404040;
   height: fit-content;
   width: fit-content;
   padding-right: 5%;
@@ -104,5 +104,5 @@
   margin-left: 5px;
 }
 .header-default .nav-default .nav li:last-child:hover {
-  background-color: rgba(39, 41, 42, 0.25);
+  background-color: #2F3234;
 }

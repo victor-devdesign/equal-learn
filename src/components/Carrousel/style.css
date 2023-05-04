@@ -4,6 +4,9 @@
 /* ---------------------------------------------
 ------------------ STYLES ----------------------
 --------------------------------------------- */
+.carrousel-swiper {
+  border-radius: 40px;
+}
 .carrousel-swiper .carrousel-container {
   border-radius: 40px;
   width: 100%;
@@ -15,4 +18,5 @@
 .carrousel-swiper .carrousel-container img {
   border-radius: 40px;
   width: 100%;
+  background-color: transparent;
 }
