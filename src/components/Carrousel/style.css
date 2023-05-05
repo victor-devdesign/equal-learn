@@ -6,17 +6,65 @@
 --------------------------------------------- */
 .carrousel-swiper {
   border-radius: 28px;
+  background-color: #353535;
 }
 .carrousel-swiper .carrousel-container {
+  position: relative;
   border-radius: 28px;
-  width: 100%;
-  height: fit-content;
+  height: 500px;
+}
+.carrousel-swiper .carrousel-container .carrousel-text {
+  position: absolute;
+  padding: 0 2rem;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  width: 45%;
+  height: 100%;
+}
+.carrousel-swiper .carrousel-container .carrousel-text span {
+  display: block;
+  margin-bottom: 2rem;
+  font-weight: 900;
+  text-align: center;
+  width: 135px;
+  transition: all 0.3s ease-in-out;
+}
+.carrousel-swiper .carrousel-container .carrousel-text span:hover {
+  font-size: 1.2rem;
+  width: 165px;
+}
+.carrousel-swiper .carrousel-container .carrousel-text.start {
+  left: 0;
+  text-align: start;
+  align-items: start;
+}
+.carrousel-swiper .carrousel-container .carrousel-text.start span {
+  right: 0;
+  transform: rotate3d(0, 0, 1, 15deg);
+}
+.carrousel-swiper .carrousel-container .carrousel-text.end {
+  right: 0;
+  text-align: end;
+  align-items: end;
+}
+.carrousel-swiper .carrousel-container .carrousel-text.end span {
+  left: 0;
+  transform: rotate3d(0, 0, 1, -15deg);
+}
+.carrousel-swiper .carrousel-container .carrousel-text.center {
+  width: 100%;
+  padding: 0 3rem;
+  text-align: center;
   align-items: center;
 }
-.carrousel-swiper .carrousel-container img {
+.carrousel-swiper .carrousel-container .carrousel-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.carrousel-swiper .carrousel-container .carrousel-image * {
   border-radius: 28px;
   width: 100%;
-  background-color: transparent;
+  height: 100%;
 }

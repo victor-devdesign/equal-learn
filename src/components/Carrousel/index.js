@@ -1,7 +1,7 @@
 import './style.css'
 
 // import Swiper core and required modules
-import { Pagination, EffectCreative, Autoplay } from 'swiper';
+import { Pagination, Autoplay } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -12,12 +12,12 @@ import 'swiper/css/pagination';
 
 export const Carrousel = (options) => {
 
-    let logo = options.url + 'assets/img/avatar.jpg';
+    console.log(options);
 
     return (
         <div className="carrousel-swiper">
             <Swiper
-                modules={[Pagination, EffectCreative, Autoplay]}
+                modules={[Pagination, Autoplay]}
 
                 pagination={{
                     dynamicBullets: true,
@@ -25,17 +25,6 @@ export const Carrousel = (options) => {
                 }}
 
                 grabCursor={false}
-
-                effect={"creative"}
-                creativeEffect={{
-                    prev: {
-                        shadow: true,
-                        translate: [0, 0, -10],
-                    },
-                    next: {
-                        translate: ["100%", 0, 0],
-                    },
-                }}
 
                 centeredSlides={true}
 
@@ -50,17 +39,51 @@ export const Carrousel = (options) => {
             >
                 <SwiperSlide>
                     <div className="carrousel-container">
-                        <img src={logo} className="col-12" height="750px" />
+                        <div className="carrousel-image">
+                            <div className="bg-client-third-alpha-25"></div>
+                        </div>
+                        <div className="carrousel-text center mb-4">
+                            <h1>Bem-vindo à plataforma de aprendizado mais incrível que você já viu!</h1>
+                        </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="carrousel-container">
-                        <img src={logo} className="col-12" height="750px" />
+                        <div className="carrousel-image">
+                            <div className="bg-client-third-alpha-25"></div>
+                        </div>
+                        <div className="carrousel-text start">
+                            <span className="text-client-primary">O céu não é mais o limite!</span>
+                            <h3>"Seu sonho está perto"</h3>
+                            <p>Este é o sinal que você precisa para seguir seus sonhos! Deixe-nos te ajudar a alcançar seus objetivos com nossos planos de estudo. Clique no botão para acessar e descobrir nossos planos incríveis.</p>
+                            <button className="btn btn-large btn-client-primary" type="button">Faça parte</button>
+                        </div>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="carrousel-container">
-                        <img src={logo} className="col-12" height="750px" />
+                        <div className="carrousel-image">
+                            <div className="bg-client-third-alpha-25"></div>
+                        </div>
+                        <div className="carrousel-text end">
+                            <span className="text-client-secondary">Junte-se a nós agora mesmo!</span>
+                            <h3>"Venha fazer parte da nossa equipe"</h3>
+                            <p>Embarcamos em uma jornada espacial, aqui você pode criar conteúdo ou aprender com nossa comunidade. O que você está esperando?</p>
+                            <button className="btn btn-large btn-client-secondary" type="button">Conheça-nos</button>
+                        </div>
+                    </div>
+                </SwiperSlide>
+                <SwiperSlide>
+                    <div className="carrousel-container">
+                        <div className="carrousel-image">
+                            <div className="bg-client-third-alpha-25"></div>
+                        </div>
+                        <div className="carrousel-text start">
+                            <span className="text-client-primary">Estamos sempre prontos para ajudar!</span>
+                            <h3>"Perguntas Frequentes"</h3>
+                            <p>Para ajudá-lo, adicionamos uma seção de perguntas frequentes. Clique no botão para acessá-lo e obter respostas para todas as suas dúvidas.</p>
+                            <button className="btn btn-large btn-outline-client-primary" type="button">FAQ</button>
+                        </div>
                     </div>
                 </SwiperSlide>
 
