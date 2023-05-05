@@ -3,15 +3,15 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //-- Pages Import
-import Home from "./pages/Home/index.js";
-import LoggedHome from "./pages/LoggedHome/index.js";
-import Http404 from "./pages/Http404/index.js";
-import About from "./pages/About/index.js";
-import Contact from "./pages/Contact/index.js";
+import Home from "./pages/Home";
+import LoggedHome from "./pages/LoggedHome";
+import Http404 from "./pages/Http404";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import Layout from "./Layout.js";
 
 //-- Loader Page
-import Loader from './components/Loader/index.js';
+import Loader from './components/Loader';
 
 /**
  * The path of the API

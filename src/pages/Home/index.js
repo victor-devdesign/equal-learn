@@ -2,7 +2,7 @@
 import React from 'react';
 
 //-- Components import
-import { Carrousel } from '../../components/Carrousel/index.js';
+import { Carrousel } from '../../components/Carrousel';
 
 //-- Icons
 import { GiInjustice } from "react-icons/gi";

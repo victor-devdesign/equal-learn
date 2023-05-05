@@ -1,4 +1,5 @@
 import './style.css'
+import { Slide } from './Slide'
 
 // import Swiper core and required modules
 import { Pagination, Autoplay } from 'swiper';
@@ -11,8 +12,6 @@ import 'swiper/css/pagination';
 
 
 export const Carrousel = (options) => {
-
-    console.log(options);
 
     return (
         <div className="carrousel-swiper">
@@ -40,7 +39,7 @@ export const Carrousel = (options) => {
                 <SwiperSlide>
                     <div className="carrousel-container">
                         <div className="carrousel-image">
-                            <div className="bg-client-third-alpha-25"></div>
+                            <img className="img-fluid" src="https://picsum.photos/1300/500?random=1&grayscale&blur=2" alt="Bem-vindo à plataforma" />
                         </div>
                         <div className="carrousel-text center mb-4">
                             <h1>Bem-vindo à plataforma de aprendizado mais incrível que você já viu!</h1>
@@ -48,43 +47,64 @@ export const Carrousel = (options) => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="carrousel-container">
-                        <div className="carrousel-image">
-                            <div className="bg-client-third-alpha-25"></div>
-                        </div>
-                        <div className="carrousel-text start">
-                            <span className="text-client-primary">O céu não é mais o limite!</span>
-                            <h3>"Seu sonho está perto"</h3>
-                            <p>Este é o sinal que você precisa para seguir seus sonhos! Deixe-nos te ajudar a alcançar seus objetivos com nossos planos de estudo. Clique no botão para acessar e descobrir nossos planos incríveis.</p>
-                            <button className="btn btn-large btn-client-primary" type="button">Faça parte</button>
-                        </div>
-                    </div>
+                    <Slide
+                        img={{
+                            src: "https://picsum.photos/1300/500?random=2&grayscale&blur=2",
+                            title: "Seu sonho está perto",
+                        }}
+                        span={{
+                            type: "text-client-primary",
+                            text: "O céu não é mais o limite!",
+                        }}
+                        title={"Seu sonho está perto"}
+                        desc={"Este é o sinal que você precisa para seguir seus sonhos! Deixe-nos te ajudar a alcançar seus objetivos com nossos planos de estudo. Clique no botão para acessar e descobrir nossos planos incríveis."}
+                        btn={{
+                            text: "Faça parte",
+                            link: "/",
+                            type: "btn-client-primary"
+                        }}
+                        position={"start"}
+                    />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="carrousel-container">
-                        <div className="carrousel-image">
-                            <div className="bg-client-third-alpha-25"></div>
-                        </div>
-                        <div className="carrousel-text end">
-                            <span className="text-client-secondary">Junte-se a nós agora mesmo!</span>
-                            <h3>"Venha fazer parte da nossa equipe"</h3>
-                            <p>Embarcamos em uma jornada espacial, aqui você pode criar conteúdo ou aprender com nossa comunidade. O que você está esperando?</p>
-                            <button className="btn btn-large btn-client-secondary" type="button">Conheça-nos</button>
-                        </div>
-                    </div>
+                    <Slide
+                        img={{
+                            src: "https://picsum.photos/1300/500?random=3&grayscale&blur=2",
+                            title: "Venha fazer parte da nossa equipe",
+                        }}
+                        span={{
+                            type: "text-client-secondary",
+                            text: "Junte-se a nós agora mesmo!"
+                        }}
+                        title={"Venha fazer parte da nossa equipe"}
+                        desc={"Embarcamos em uma jornada espacial, aqui você pode criar conteúdo ou aprender com nossa comunidade. O que você está esperando?"}
+                        btn={{
+                            text: "Conheça-nos",
+                            link: "/",
+                            type: "btn-client-secondary"
+                        }}
+                        position={"end"}
+                    />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="carrousel-container">
-                        <div className="carrousel-image">
-                            <div className="bg-client-third-alpha-25"></div>
-                        </div>
-                        <div className="carrousel-text start">
-                            <span className="text-client-primary">Estamos sempre prontos para ajudar!</span>
-                            <h3>"Perguntas Frequentes"</h3>
-                            <p>Para ajudá-lo, adicionamos uma seção de perguntas frequentes. Clique no botão para acessá-lo e obter respostas para todas as suas dúvidas.</p>
-                            <button className="btn btn-large btn-outline-client-primary" type="button">FAQ</button>
-                        </div>
-                    </div>
+                    <Slide
+                        img={{
+                            src: "https://picsum.photos/1300/500?random=4&grayscale&blur=2",
+                            title: "Perguntas Frequentes",
+                        }}
+                        span={{
+                            type: "text-client-primary",
+                            text: "Estamos sempre prontos para ajudar!"
+                        }}
+                        title={"Perguntas Frequentes"}
+                        desc={"Para ajudá-lo, adicionamos uma seção de perguntas frequentes. Clique no botão para acessá-lo e obter respostas para todas as suas dúvidas."}
+                        btn={{
+                            text: "FAQ",
+                            link: "/",
+                            type: "btn-client-primary"
+                        }}
+                        position={"start"}
+                    />
                 </SwiperSlide>
 
             </Swiper>

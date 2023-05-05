@@ -1,4 +1,4 @@
-import { Profile } from '../Profile/index.js';
+import { Profile } from '../Profile';
 import './style.css'
 
 //-- Icon Import
