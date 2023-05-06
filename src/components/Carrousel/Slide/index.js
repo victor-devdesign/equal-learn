@@ -1,11 +1,26 @@
 import '../style.css'
 
+import { SVG_00, SVG_01, SVG_02, SVG_03 } from './svg/index';
+
 export const Slide = (options) => {
+
+    function svgFilter(slide) {
+        switch (slide) {
+            case "slide_01":
+                return <SVG_01 />;
+            case "slide_02":
+                return <SVG_02 />;
+            case "slide_03":
+                return <SVG_03 />;
+            default:
+                return <SVG_00 />;
+        }
+    }
 
     return (
         <div className="carrousel-container">
             <div className="carrousel-image">
-                <img className="img-fluid" src={options.img.src} alt={options.img.title} />
+                {svgFilter(options.svg.src)}
             </div>
             <div className={"carrousel-text " + options.position}>
                 <span className={options.span.type}>{options.span.text}</span>

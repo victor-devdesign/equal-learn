@@ -31,7 +31,7 @@ A seguir temos aas ideias por slide do carrossel:
 Bem-vindo à plataforma de aprendizado mais incrível que você já viu!
 
 ### SLIDE 1
-- <b>Background:</b> Uma criança olhando para o ceú vendo uma estrela;
+- <b>Background:</b> Uma criança olhando para o ceú vendo a lua e um céu estrelado;
 - <b>Título:</b> "Seu sonho está perto"
 - <b>Descrição:</b> Este é o sinal que você precisa para seguir seus sonhos! Deixe-nos te ajudar a alcançar seus objetivos com nossos planos de estudo. Clique no botão para acessar e descobrir nossos planos incríveis.
 - <b>Msg Adicional:</b> O céu não é mais o limite!

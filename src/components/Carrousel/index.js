@@ -48,8 +48,8 @@ export const Carrousel = (options) => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <Slide
-                        img={{
-                            src: "https://picsum.photos/1300/500?random=2&grayscale&blur=2",
+                        svg={{
+                            src: "slide_01",
                             title: "Seu sonho está perto",
                         }}
                         span={{
@@ -68,8 +68,8 @@ export const Carrousel = (options) => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <Slide
-                        img={{
-                            src: "https://picsum.photos/1300/500?random=3&grayscale&blur=2",
+                        svg={{
+                            src: "slide_02",
                             title: "Venha fazer parte da nossa equipe",
                         }}
                         span={{
@@ -88,8 +88,8 @@ export const Carrousel = (options) => {
                 </SwiperSlide>
                 <SwiperSlide>
                     <Slide
-                        img={{
-                            src: "https://picsum.photos/1300/500?random=4&grayscale&blur=2",
+                        svg={{
+                            src: "slide_03",
                             title: "Perguntas Frequentes",
                         }}
                         span={{
