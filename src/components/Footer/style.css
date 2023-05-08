@@ -1,0 +1,66 @@
+/* ---------------------------------------------
+----------------- IMPORTS ----------------------
+--------------------------------------------- */
+/* ---------------------------------------------
+------------------ STYLES ----------------------
+--------------------------------------------- */
+.footer-default {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: fit-content;
+  background-color: #353535;
+  color: #E6E6E6;
+  padding: 20px 0;
+  margin-top: 5vh;
+  text-align: center;
+}
+.footer-default .footer-logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.footer-default .footer-logo img {
+  width: 100px;
+}
+.footer-default .footer-menu {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.footer-default .footer-menu a {
+  color: #E6E6E6;
+  font-size: 14px;
+  margin: 0 10px;
+  transition: all 0.2s ease-in-out;
+}
+.footer-default .footer-menu a:hover {
+  color: #6FBCD3;
+}
+.footer-default .footer-social {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.footer-default .footer-social a {
+  color: #E6E6E6;
+  font-size: 20px;
+  margin: 0 10px;
+  transition: all 0.2s ease-in-out;
+}
+.footer-default .footer-social a:hover {
+  color: #6FBCD3;
+}
+.footer-default .footer-menu .nav,
+.footer-default .footer-social .nav {
+  justify-content: center;
+}
+.footer-default .footer-copy {
+  font-size: 12px;
+}
+.footer-default .footer-copy a {
+  color: #2F4F59;
+  transition: all 0.2s ease-in-out;
+}
+.footer-default .footer-copy a:hover {
+  transform: scale3d(2, 2, 2);
+  color: #6FBCD3;
+}

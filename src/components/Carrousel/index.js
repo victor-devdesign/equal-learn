@@ -77,7 +77,7 @@ export const Carrousel = (options) => {
                             text: "Junte-se a nós agora mesmo!"
                         }}
                         title={"Venha fazer parte da nossa equipe"}
-                        desc={"Embarcamos em uma jornada espacial, aqui você pode criar conteúdo ou aprender com nossa comunidade. O que você está esperando?"}
+                        desc={"Embarcamos em uma jornada espacial, aqui você pode criar conteúdos ou aprender com nossa comunidade. O que você está esperando?"}
                         btn={{
                             text: "Conheça-nos",
                             link: "/",

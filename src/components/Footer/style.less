@@ -1,0 +1,90 @@
+/* ---------------------------------------------
+----------------- IMPORTS ----------------------
+--------------------------------------------- */
+
+@import '../../assets/css/variables.less'; // Varáveis LESS
+
+/* ---------------------------------------------
+------------------ STYLES ----------------------
+--------------------------------------------- */
+.footer-default {
+    position: relative;
+    bottom: 0;
+    left: 0;
+
+    width: 100vw;
+    height: fit-content;
+
+    background-color: @color-fourth-03;
+    color: @color-third;
+
+    padding: 20px 0;
+    margin-top: 5vh;
+
+    text-align: center;
+
+    .footer-logo {
+        text-align: center;
+        margin-bottom: 20px;
+
+        img {
+            width: 100px;
+        }
+    }
+
+    .footer-menu {
+        text-align: center;
+        margin-bottom: 20px;
+
+        a {
+            color: @color-third;
+            font-size: 14px;
+            margin: 0 10px;
+
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                color: @color-primary;
+            }
+        }
+    }
+
+    .footer-social {
+        text-align: center;
+        margin-bottom: 20px;
+
+        a {
+            color: @color-third;
+            font-size: 20px;
+            margin: 0 10px;
+
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                color: @color-primary;
+            }
+        }
+    }
+
+    .footer-menu,
+    .footer-social {
+        .nav {
+            justify-content: center;
+        }
+    }
+
+    .footer-copy {
+        font-size: 12px;
+
+        a {
+            color: @color-primary-05;
+
+            transition: all .2s ease-in-out;
+
+            &:hover {
+                transform: scale3d(2, 2, 2);
+                color: @color-primary;
+            }
+        }
+    }
+}

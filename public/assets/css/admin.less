@@ -19,8 +19,12 @@
 --------------------------------------------- */
 
 html,
-body {
+body,
+#root {
+    position: relative;
+
     width: 100vw;
+    min-height: 100vh;
     overflow-x: hidden;
 
     font-family: 'Poppins', sans-serif !important;
@@ -30,6 +34,10 @@ body {
     -ms-text-size-adjust: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    .main-content {
+        overflow-x: hidden;
+    }
 }
 
 h1,

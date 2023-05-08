@@ -2,13 +2,14 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { NavBar } from './components/NavBar';
+import { Footer } from './components/Footer';
 
 const Layout = (options) => {
 
     const data = options.data;
 
     return (
-        <div className="row">
+        <div className="row main-content">
             <div className="col-12">
                 <NavBar logo={data.logo.small} profile={data.user.profile} name={data.user.name} />
             </div>
@@ -22,6 +23,9 @@ const Layout = (options) => {
                         </div>
                     </div>
                 </main>
+            </div>
+            <div className="col-12">
+                <Footer logo={data.logo.medium} />
             </div>
         </div>
     );
