@@ -36,6 +36,7 @@ class Filters extends BaseConfig
                 'except' => [
                     'Api/Payments/Notification/*',
                     'tools/cron/*',
+                    'api/*'
                 ],
 
             ],
