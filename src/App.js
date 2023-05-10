@@ -25,24 +25,23 @@ const API_URL = "http://localhost/equal-learn/public/Api/";
  * @returns {object} data
  */
 function getData() {
-  // return fetch(API_URL + "MetaTags/getMetaTags").then((response) => response.json());
-  console.log("Load Api");
-  return {
-    url: document.location.origin + "/",
-    logo: {
-      small: document.location.origin + "/assets/img/logo/small_logo.png",
-      medium: document.location.origin + "/assets/img/logo/medium_logo.png",
-      large: document.location.origin + "/assets/img/logo/large_logo.png",
-    },
-    metas: {},
-    user: {
-      // id: "1",
-      // name: "Cléber da Costa",
-      // role: "free_user",
-      // profile: document.location.origin + "/assets/img/avatar.jpg",
-      // roles: {},
-    },
-  };
+  // fetch allow cors in request header
+  return fetch(API_URL + "MetaTags/getMetaTags", {
+    method: "POST",
+    // data: {
+    //   app: document.location.origin,
+    // },
+    mode: "cors",
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+      return data;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      return null;
+    });
 }
 
 export default function App() {
@@ -50,7 +49,7 @@ export default function App() {
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    setData(getData());
+    getData().then((data) => setData(data));
   }, []);
 
   if (data === null) {
