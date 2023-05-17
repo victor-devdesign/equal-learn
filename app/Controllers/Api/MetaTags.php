@@ -8,10 +8,10 @@ class MetaTags extends ApiController
 {
     public function getMetaTags()
     {
-        // $post = $this->request->getPost();
-
-        $post = [];
-        $post['app'] = 'http://localhost:3000';
+        $post = $this->request->getPost();
+        if (!isset($post['app'])) {
+            $post['app'] = "http://localhost:3000";
+        }
 
         $ret = [
             "url" => $post['app'] . "/",
