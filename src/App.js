@@ -25,15 +25,17 @@ const API_URL = "http://localhost/equal-learn/public/Api/";
  * @returns {object} data
  */
 function getData() {
-  // fetch allow cors in request header
   return fetch(API_URL + "MetaTags/getMetaTags", {
     method: "POST",
-    // data: {
-    //   app: document.location.origin,
-    // },
-    mode: "cors",
+    body: JSON.stringify({
+      app: document.location.origin,
+      csrf_cookie_name: 'e6677284dffb96a3881fd6967f4ed60a'
+    }),
+    mode: "no-cors",
+  }).then(response => {
+    console.log(response.json());
+    return response.json();
   })
-    .then((response) => response.json())
     .then((data) => {
       console.log(data);
       return data;
@@ -52,7 +54,7 @@ export default function App() {
     getData().then((data) => setData(data));
   }, []);
 
-  if (data === null) {
+  if (data == null) {
     return (
       <div>
         <Loader />
