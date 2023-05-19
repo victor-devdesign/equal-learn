@@ -32,18 +32,34 @@ function getData() {
       csrf_cookie_name: 'e6677284dffb96a3881fd6967f4ed60a'
     }),
     mode: "no-cors",
-  }).then(response => {
-    console.log(response.json());
-    return response.json();
   })
+    .then(response => {
+      console.log(response.json());
+      return response.json();
+    })
     .then((data) => {
       console.log(data);
       return data;
     })
     .catch((error) => {
-      console.error("Error:", error);
-      return null;
+      return {
+        url: document.location.origin + "/",
+        logo: {
+          small: document.location.origin + "/assets/img/logo/small_logo.png",
+          medium: document.location.origin + "/assets/img/logo/medium_logo.png",
+          large: document.location.origin + "/assets/img/logo/large_logo.png",
+        },
+        metas: {},
+        user: {
+          // id: "1",
+          // name: "Cléber da Costa",
+          // role: "free_user",
+          // profile: document.location.origin + "/assets/img/avatar.jpg",
+          // roles: {},
+        },
+      };
     });
+
 }
 
 export default function App() {

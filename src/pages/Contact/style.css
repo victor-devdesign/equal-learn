@@ -1,0 +1,18 @@
+/* ---------------------------------------------
+----------------- IMPORTS ----------------------
+--------------------------------------------- */
+/* ---------------------------------------------
+------------------ STYLES ----------------------
+--------------------------------------------- */
+.display-contact {
+  justify-content: start;
+  align-items: center;
+  text-align: start;
+  padding-top: 6vh;
+}
+.display-contact h1 {
+  margin-bottom: .5vh;
+}
+.display-contact p {
+  margin-bottom: 2vh;
+}

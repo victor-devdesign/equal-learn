@@ -1,0 +1,40 @@
+/* ---------------------------------------------
+----------------- IMPORTS ----------------------
+--------------------------------------------- */
+/* ---------------------------------------------
+------------------ STYLES ----------------------
+--------------------------------------------- */
+.form-container {
+  justify-content: start;
+  align-items: center;
+  text-align: start;
+}
+.form-container h1 {
+  margin-bottom: .5vh;
+}
+.form-container p {
+  margin-bottom: 2vh;
+}
+.form-container label {
+  margin-bottom: 1vh;
+  color: #E6E6E6;
+}
+.form-container .form-control,
+.form-container .form-select {
+  width: 100%;
+  height: 5vh;
+  background-color: #252525;
+  border: 1px solid #b4b4b4;
+  color: #b4b4b4;
+  border-radius: 10px;
+  padding: 0 .75vw;
+  font-size: 1.2rem;
+}
+.form-container .form-control:focus,
+.form-container .form-select:focus {
+  outline: none;
+}
+.form-container textarea {
+  padding-top: 12px !important;
+  height: fit-content !important;
+}

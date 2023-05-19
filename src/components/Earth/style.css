@@ -1,0 +1,46 @@
+.earth {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 20px #000 inset, 0 0 20px 2px #000;
+}
+
+.earth:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: -20px -20px 50px 2px #000 inset;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.earth>div {
+    width: 200%;
+    height: 100%;
+    animation: swingView 30s linear alternate infinite;
+    background: url(earth_map.jpg);
+    background-size: cover;
+}
+
+@keyframes swingView {
+    from {
+        transform: translateX(0%)
+    }
+
+    to {
+        transform: translateX(-50%)
+    }
+}
