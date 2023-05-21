@@ -102,6 +102,9 @@ function Option(props) {
  * 
  * @param {string} props.id             - The id of the button
  * @param {string} props.type           - The type of the button [button, submit, reset]
+ * @param {string} props.typeFill       - The fill class of the button [outline, fill, clear]
+ * @param {string} props.color          - The color of the button [primary, secondary, success, danger, warning, info, light, dark]
+ * @param {boolean} props.disabled      - The disabled of the button [true, false]
  * @param {string} props.class          - The class of the button
  * @param {string} props.name           - The name of the button
  * @param {string} props.value          - The value of the button
@@ -111,8 +114,39 @@ function Option(props) {
  */
 function Button(props) {
 
+    const data = {}; //-- Filter data of the button
+
+    //-- Filter of fill class
+    data.fill = "client-";
+    if (props.typeFill === "outline") {
+        data.fill = "outline-client-";
+    } else if (props.typeFill === "clear") {
+        data.fill = "";
+    }
+
+    //-- Filter of class
+    data.class = "";
+    if (props.class !== undefined) {
+        data.class = " " + props.class ?? "";
+    }
+
+    //-- Filter of disabled
+    if (props.disabled === true) {
+        data.class += " disabled";
+    }
+
     return (
-        <button type={props.type} className={"btn" + props.class} id={props.id} name={props.name} value={props.value}>{props.children}</button>
+        <button
+            type={props.type}
+            className={
+                "btn btn-" + data.fill + props.color + data.class
+            }
+            id={props.id}
+            name={props.name}
+            value={props.value}
+        >
+            {props.children}
+        </button>
     );
 }
 

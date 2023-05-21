@@ -67,7 +67,8 @@ function Contact(options) {
                             <Button
                                 id="contact_submit"
                                 type="submit"
-                                class=' btn-primary'
+                                typeFill="fill"
+                                color="primary"
                                 name="contact_submit"
                                 value="Enviar"
                             >
