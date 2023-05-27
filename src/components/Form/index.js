@@ -29,6 +29,30 @@ function Input(props) {
 }
 
 /**
+ * Password component
+ * 
+ * @param {object} props The properties of the password
+ * 
+ * @param {string} props.id             - The id of the password
+ * @param {string} props.label          - The label of the password
+ * @param {string} props.class          - The class of the password
+ * @param {string} props.name           - The name of the password
+ * @param {string} props.placeholder    - The placeholder of the password
+ * @param {string} props.value          - The content of the password
+ * 
+ * @returns Interface of the password component
+ */
+function Password(props) {
+
+    return (
+        <div className='form-group'>
+            <label for={props.id}>{props.label}</label>
+            <input type="password" className={"form-control" + props.class} id={props.id} name={props.name} placeholder={props.placeholder} />
+        </div>
+    );
+}
+
+/**
  * Textarea component
  * 
  * @param {object} props The properties of the textarea
@@ -170,4 +194,4 @@ function Form(props) {
 }
 
 
-export { Form, Input, Textarea, Select, Option, Button };
+export { Form, Input, Password, Textarea, Select, Option, Button };

@@ -1,0 +1,74 @@
+/* ---------------------------------------------
+----------------- IMPORTS ----------------------
+--------------------------------------------- */
+/* ---------------------------------------------
+------------------ STYLES ----------------------
+--------------------------------------------- */
+.display-login {
+  padding-top: 6vh;
+}
+.display-login .login-info,
+.display-login .login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px;
+}
+.display-login .login-info button,
+.display-login .login-form button {
+  padding: 12px;
+  border-radius: 50px;
+}
+.display-login .login-info {
+  background-color: #77C8E0;
+  border-radius: 50px;
+  text-align: center;
+}
+.display-login .login-form .login-container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.display-login .login-form .login-container h1 {
+  margin-bottom: 2vh;
+  color: #77C8E0;
+}
+.display-login .login-form .login-container button {
+  width: 100%;
+  margin-top: 2vh;
+  background-color: #77C8E0;
+}
+.display-login .login-form .login-container button:hover {
+  background-color: #63A6BA;
+  color: #E6E6E6;
+}
+.display-login .login-form .login-container .login-icons {
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 50%;
+  margin-top: 2vh;
+}
+.display-login .login-form .login-container .login-icons .login-icon {
+  padding: 24px;
+  border-radius: 50px;
+}
+.display-login .login-form .login-container .login-icons .login-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.display-login .login-form .login-container .login-icons .login-icon:hover {
+  background-color: #131313;
+  color: #E6E6E6;
+}
+.display-login h1 {
+  margin-bottom: .5vh;
+}
+.display-login p {
+  margin-bottom: 2vh;
+  color: #E6E6E6;
+}

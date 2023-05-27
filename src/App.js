@@ -8,6 +8,7 @@ import LoggedHome from "./pages/LoggedHome";
 import Http404 from "./pages/Http404";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Login from "./pages/Login";
 import Layout from "./Layout.js";
 
 //-- Loader Page
@@ -99,6 +100,7 @@ export default function App() {
           <Route index element={setHome()} />
           <Route path="about" element={<About data={data} />} />
           <Route path="contact" element={<Contact data={data} />} />
+          <Route path="login" element={<Login data={data} />} />
 
           {/* HTTP 404 Page Not Found */}
           <Route path="/*" element={<Http404 data={data} />} />
