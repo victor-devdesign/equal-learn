@@ -51,11 +51,11 @@
   justify-content: space-between;
   flex-direction: row;
   width: 50%;
-  margin-top: 2vh;
+  margin-bottom: 2vh;
 }
 .display-login .login-form .login-container .login-icons .login-icon {
   padding: 24px;
-  border-radius: 50px;
+  border-radius: 50%;
 }
 .display-login .login-form .login-container .login-icons .login-icon svg {
   width: 100%;

@@ -12,7 +12,6 @@ import './style.css'
  * @param {string} props.type           - The type of the input [text, email, password, number, date, file]
  * @param {string} props.label          - The label of the input
  * @param {string} props.class          - The class of the input
- * @param {string} props.name           - The name of the input
  * @param {string} props.placeholder    - The placeholder of the input
  * @param {string} props.value          - The content of the input
  * 
@@ -22,8 +21,8 @@ function Input(props) {
 
     return (
         <div className='form-group'>
-            <label for={props.id}>{props.label}</label>
-            <input type={props.type} className={"form-control" + props.class} id={props.id} name={props.name} placeholder={props.placeholder} />
+            <label htmlFor={props.id}>{props.label}</label>
+            <input type={props.type} className={"form-control" + props.class} id={props.id} name={props.id} placeholder={props.placeholder} />
         </div>
     );
 }
@@ -36,7 +35,6 @@ function Input(props) {
  * @param {string} props.id             - The id of the password
  * @param {string} props.label          - The label of the password
  * @param {string} props.class          - The class of the password
- * @param {string} props.name           - The name of the password
  * @param {string} props.placeholder    - The placeholder of the password
  * @param {string} props.value          - The content of the password
  * 
@@ -46,8 +44,8 @@ function Password(props) {
 
     return (
         <div className='form-group'>
-            <label for={props.id}>{props.label}</label>
-            <input type="password" className={"form-control" + props.class} id={props.id} name={props.name} placeholder={props.placeholder} />
+            <label htmlFor={props.id}>{props.label}</label>
+            <input type="password" className={"form-control" + props.class} id={props.id} name={props.id} placeholder={props.placeholder} />
         </div>
     );
 }
@@ -60,7 +58,6 @@ function Password(props) {
  * @param {string} props.id             - The id of the textarea
  * @param {string} props.label          - The label of the textarea
  * @param {string} props.class          - The class of the textarea
- * @param {string} props.name           - The name of the textarea
  * @param {string} props.placeholder    - The placeholder of the textarea
  * @param {string} props.rows           - The rows of the textarea
  * @param {string} props.cols           - The height of the textarea
@@ -72,8 +69,8 @@ function Textarea(props) {
 
     return (
         <div className='form-group'>
-            <label for={props.id}>{props.label}</label>
-            <textarea className={"form-control" + props.class} id={props.id} name={props.name} placeholder={props.placeholder} rows={props.rows} cols={props.cols}>{props.children}</textarea>
+            <label htmlFor={props.id}>{props.label}</label>
+            <textarea className={"form-control" + props.class} id={props.id} name={props.id} placeholder={props.placeholder} rows={props.rows} cols={props.cols}>{props.children}</textarea>
         </div>
     );
 }
@@ -86,7 +83,6 @@ function Textarea(props) {
  * @param {string} props.id             - The id of the select
  * @param {string} props.label          - The label of the select
  * @param {string} props.class          - The class of the select
- * @param {string} props.name           - The name of the select
  * @param {string} props.placeholder    - The placeholder of the select
  * @param {string} props.children       - The content of the select
  * 
@@ -96,8 +92,8 @@ function Select(props) {
 
     return (
         <div className='form-group'>
-            <label for={props.id}>{props.label}</label>
-            <select className={"form-control" + props.class} id={props.id} name={props.name} placeholder={props.placeholder}>{props.children}</select>
+            <label htmlFor={props.id}>{props.label}</label>
+            <select className={"form-control" + props.class} id={props.id} name={props.id} placeholder={props.placeholder}>{props.children}</select>
         </div>
     );
 }
@@ -130,8 +126,8 @@ function Option(props) {
  * @param {string} props.color          - The color of the button [primary, secondary, success, danger, warning, info, light, dark]
  * @param {boolean} props.disabled      - The disabled of the button [true, false]
  * @param {string} props.class          - The class of the button
- * @param {string} props.name           - The name of the button
  * @param {string} props.value          - The value of the button
+ * @param {callback} props.click        - The click callback function of button
  * @param {string} props.children       - The content of the button
  * 
  * @returns Interface of the button component
@@ -159,6 +155,14 @@ function Button(props) {
         data.class += " disabled";
     }
 
+    //-- Set click event action
+    function handleClick(e) {
+        e.preventDefault();
+        if (props.click !== undefined) {
+            props.click(e);
+        }
+    }
+
     return (
         <button
             type={props.type}
@@ -166,8 +170,9 @@ function Button(props) {
                 "btn btn-" + data.fill + props.color + data.class
             }
             id={props.id}
-            name={props.name}
+            name={props.id}
             value={props.value}
+            onClick={handleClick}
         >
             {props.children}
         </button>

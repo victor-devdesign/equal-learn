@@ -10,6 +10,10 @@ import { FcGoogle } from 'react-icons/fc';
 //-- Styles of Page
 import './style.css'
 
+const SignUp = (e) => {
+    window.location.href = '/signup';
+}
+
 function Login(options) {
 
     const data = options.data;
@@ -26,6 +30,7 @@ function Login(options) {
                     color="third"
                     name="login_cadastrar"
                     value="Cadastrar"
+                    click={SignUp}
                 >
                     Cadastrar
                 </Button>
@@ -33,6 +38,7 @@ function Login(options) {
             <div className='col-12 col-md-8 login-form'>
                 <h1>Bem Vindo de Volta!</h1>
                 <div className='login-container'>
+                    <p>Acesse nossa Estação Espacial utilizando ...</p>
                     <div className='row login-icons'>
                         <div className='col-12 col-md-4'>
                             <div className='login-icon'>
@@ -50,6 +56,7 @@ function Login(options) {
                             </div>
                         </div>
                     </div>
+                    <p>Ou volte a explorar preenchendo abaixo:</p>
                     <Form action="Contact" method="POST" class="login-form">
                         <div className='row'>
                             <div className='col-12 mb-4'>
