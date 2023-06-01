@@ -4,9 +4,6 @@
 /* ---------------------------------------------
 ------------------ STYLES ----------------------
 --------------------------------------------- */
-.display-login {
-  padding-top: 6vh;
-}
 .display-login .login-info,
 .display-login .login-form {
   display: flex;
