@@ -1,4 +1,6 @@
 import React from 'react';
+import { useState } from 'react';
+import zxcvbn from 'zxcvbn';
 
 //-- Styles of Page
 import './style.css'
@@ -28,6 +30,46 @@ function Input(props) {
 }
 
 /**
+ * Progressbar component
+ * 
+ * @param {object} props The properties of the password
+ * 
+ * @param {string} props.id             - The id of the progressbar
+ * @param {string} props.value          - The value of the progressbar
+ * @param {string} props.visible        - The visibility of the progressbar
+ * @param {string} props.min            - The min value of the progressbar
+ * @param {string} props.max            - The max value of the progressbar
+ * 
+ * @returns Interface of the input component | null
+ */
+function Progressbar(props) {
+
+    if (!props.visible) {
+        return null;
+    }
+
+    let progressbarColor = "";
+
+    if (props.value < 25) {
+        progressbarColor = "bg-danger";
+    } else if (props.value < 50) {
+        progressbarColor = "bg-warning";
+    } else if (props.value < 75) {
+        progressbarColor = "bg-info";
+    } else {
+        progressbarColor = "bg-success";
+    }
+
+    return (
+        <div className="w-100 mt-3">
+            <div className="progress">
+                <div className={"progress-bar progress-bar-striped progress-bar-animated " + progressbarColor} role={props.id} style={{ width: props.value + "%" }} aria-valuenow={props.value} aria-valuemin="0" aria-valuemax="100">{props.value}%</div>
+            </div>
+        </div>
+    );
+}
+
+/**
  * Password component
  * 
  * @param {object} props The properties of the password
@@ -37,15 +79,153 @@ function Input(props) {
  * @param {string} props.class          - The class of the password
  * @param {string} props.placeholder    - The placeholder of the password
  * @param {string} props.value          - The content of the password
+ * @param {string} props.onChange       - The onChange event of the password
  * 
+ * @param {object} props.strength               - The strength atributes of the password
+ * @param {boolean} props.strength.validation   - The validation of the password
+ * @param {boolean} props.strength.progress     - The progress of the password
+ *  
  * @returns Interface of the password component
  */
 function Password(props) {
 
+    let [strength, setPasswordStrength] = useState(0);
+
+    let progressVisible = false;
+    try {
+        progressVisible = typeof props.strength.progress !== "undefined" ? props.strength.progress === true : false;
+    } catch (error) { }
+
+    /**
+     * Método de validação de evento para change do input
+     * 
+     * @param {*} event 
+     * @returns 
+     */
+    let changeCallback = (event) => {
+        event.preventDefault();
+
+        try {
+            return props.onChange(event);
+        } catch (error) { }
+
+        try {
+            return props.strength.validation ? checkPasswordStrength(event) : null;
+        } catch (error) { }
+
+        return null;
+    };
+
+    /**
+     * Método de validação padrão de senha e captura de força
+     * @param {*} event 
+     */
+    const checkPasswordStrength = (event) => {
+        let password = event.target.value,
+            result = zxcvbn(password),
+            value = 0,
+            characterTypes = {},
+            length = 0,
+            differentiation = 0;
+
+        // Check for character types
+        characterTypes = {
+            lowercase: /[a-z]/,
+            uppercase: /[A-Z]/,
+            numbers: /[0-9]/,
+            special: /[^a-zA-Z0-9]/
+        };
+
+        // Calculate the password strength based on the result
+        value = result.guesses_log10;
+
+        // Check the number of character types present in the password
+        for (const type in characterTypes) {
+            if (characterTypes[type].test(password)) {
+                // Weight multiplication by character type
+                switch (type) {
+                    case 'lowercase':
+                        value *= 0.5;
+                        break;
+
+                    case 'uppercase':
+                        value *= 3;
+                        break;
+
+                    case 'numbers':
+                        value *= 6;
+                        break;
+
+                    case 'special':
+                        value *= 10;
+                        break;
+
+                    default:
+                        break;
+                }
+
+                differentiation++;
+            }
+        }
+
+        // Set the value as an integer
+        value = parseInt(value);
+
+        // Check for additional password strength rules
+        if (password.length <= 8) {
+            value = Math.min(value, 80);
+        }
+
+        if (!characterTypes["lowercase"].test(password)) {
+            value = Math.min(value, 85);
+        }
+
+        if (!characterTypes["uppercase"].test(password)) {
+            value = Math.min(value, 65);
+        }
+
+        if (!characterTypes["numbers"].test(password)) {
+            value = Math.min(value, 45);
+        }
+
+        if (!characterTypes["special"].test(password)) {
+            value = Math.min(value, 35);
+        }
+
+        // Calculate the differentiation value based on the number of character types and additional rules
+        differentiation = Math.min(differentiation, 1); // Limit differentiation to 1
+
+        // Calculate the value based on differentiation and password length
+        length = password.length;
+        value += differentiation * 20; // Increase value based on differentiation
+
+        // Apply maximum limits to the value based on password length
+        if (length <= 2) {
+            value = Math.min(value, 30);
+        } else if (length <= 3) {
+            value = Math.min(value, 50);
+        } else if (length <= 5) {
+            value = Math.min(value, 65);
+        } else if (length <= 6) {
+            value = Math.min(value, 75);
+        } else if (length <= 8) {
+            value = Math.min(value, 100);
+        }
+
+        setPasswordStrength(Math.min(value, 100));
+    };
+
     return (
         <div className='form-group'>
             <label htmlFor={props.id}>{props.label}</label>
-            <input type="password" className={"form-control" + props.class} id={props.id} name={props.id} placeholder={props.placeholder} />
+            <input type="password" className={"form-control" + props.class} id={props.id} name={props.id} placeholder={props.placeholder} data-strength={strength} onChange={changeCallback} />
+            <Progressbar
+                id="password_strength"
+                value={strength}
+                visible={progressVisible ?? 0}
+                min="0"
+                max="100"
+            />
         </div>
     );
 }

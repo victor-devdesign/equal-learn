@@ -1,33 +1,10 @@
 //-- Components import
-import { useState } from 'react';
 import { Form, Input, Password, Button } from '../../components/Form';
-import zxcvbn from 'zxcvbn';
+
+//-- Import Icons
+import { ImCheckmark } from 'react-icons/im';
 
 function Signup() {
-    const [passwordStrength, setPasswordStrength] = useState('');
-
-    const checkPasswordStrength = (event) => {
-        const password = event.target.value;
-        const result = zxcvbn(password);
-
-        // Define a força da senha com base no resultado do zxcvbn
-        switch (result.score) {
-            case 0:
-                setPasswordStrength('Fraca');
-                break;
-            case 1:
-                setPasswordStrength('Média');
-                break;
-            case 2:
-                setPasswordStrength('Forte');
-                break;
-            case 3:
-                setPasswordStrength('Muito Forte');
-                break;
-            default:
-                setPasswordStrength('');
-        }
-    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -71,17 +48,6 @@ function Signup() {
                 </div>
 
                 <div className='row'>
-                    <div className="col-12 mb-4">
-                        <progress
-                            id="password-strength"
-                            value={passwordStrength !== '' ? (passwordStrength === 'Muito Forte' ? '100' : '75') : '0'}
-                            max="100"
-                        ></progress>
-                        {passwordStrength && <p>Força da senha: {passwordStrength}</p>}
-                    </div>
-                </div>
-
-                <div className='row'>
 
                     <div className="col-12 col-md-6 mb-4">
                         <Password
@@ -90,7 +56,7 @@ function Signup() {
                             label="Senha"
                             class=""
                             placeholder="Digite sua senha"
-                            onChange={checkPasswordStrength}
+                            strength={{ validation: true, progress: true }}
                         />
                     </div>
 
@@ -102,6 +68,19 @@ function Signup() {
                             class=""
                             placeholder="Confirme sua senha"
                         />
+                    </div>
+
+                    <div className="col-12 col-md-6 mb-4">
+                        {/* Regras para força de senha */}
+                        <h5>Regras para força de senha:</h5>
+                        <p className="mb-2">A senha deve conter:</p>
+                        <ul className="list-unstyled ms-2">
+                            <li><ImCheckmark /> Mínimo de 8 caracteres</li>
+                            <li><ImCheckmark /> Mínimo de 1 letra maiúscula</li>
+                            <li><ImCheckmark /> Mínimo de 1 letra minúscula</li>
+                            <li><ImCheckmark /> Mínimo de 1 número</li>
+                            <li><ImCheckmark /> Mínimo de 1 caractere especial</li>
+                        </ul>
                     </div>
 
                     <div className="col-12 mt-2">
@@ -117,10 +96,6 @@ function Signup() {
                                 CADASTRAR
                             </Button>
                         </div>
-                    </div>
-
-                    <div className="col-12">
-                        {passwordStrength && <p>Força da senha: {passwordStrength}</p>}
                     </div>
                 </div>
             </Form>
