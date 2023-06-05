@@ -4,17 +4,32 @@ import './style.css'
 //-- Icon Import
 import { FaSearch } from "react-icons/fa";
 
-export const NavBar = (data) => {
+function Links(props) {
+    const links = props.links;
+    console.log(links);
 
     const activePage = (page) => {
-        if (window.location.pathname === "/" + page) {
+        if (window.location.pathname === page) {
             return "active";
-        } else if (window.location.pathname === "/" && page == "home") {
+        } else if (window.location.pathname === "/" && page === "/") {
             return "active";
         } else {
             return "";
         }
     }
+
+    let linksList = [];
+    if (typeof links !== "undefined") {
+        linksList = links.map((link, index) => {
+            return (
+                <li key={index}><a href={link.url} className={activePage(link.url)}>{link.title}</a></li>
+            )
+        });
+    }
+    return linksList;
+}
+
+export const NavBar = (data) => {
 
     return (
         <header className="header-default">
@@ -35,9 +50,7 @@ export const NavBar = (data) => {
                             </div>
                             {/* <!-- ----- Menu ----- */}
                             <ul className="nav">
-                                <li><a href="/" className={activePage('home')}>Home</a></li>
-                                <li><a href="/about" className={activePage('about')}>Sobre Nós</a></li>
-                                <li><a href="/contact" className={activePage('contact')}>Contate-nos</a></li>
+                                <Links links={data.links} />
                                 <Profile
                                     logged={typeof data.profile !== "undefined" && typeof data.name !== "undefined"}
                                     profile={data.profile}

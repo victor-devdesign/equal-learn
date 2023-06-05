@@ -1,0 +1,26 @@
+{
+    "url": "http://localhost:3000/",
+    "logo": {
+        "small": "http://localhost:3000/assets/img/logo/small_logo.png",
+        "medium": "http://localhost:3000/assets/img/logo/medium_logo.png",
+        "large": "http://localhost:3000/assets/img/logo/large_logo.png"
+    },
+    "metas": {},
+    "user": {},
+    "navbar": {
+        "links": [
+            {
+                "title": "Home",
+                "url": "/"
+            },
+            {
+                "title": "Sobre Nós",
+                "url": "/about"
+            },
+            {
+                "title": "Contato",
+                "url": "/contact"
+            }
+        ]
+    }
+}

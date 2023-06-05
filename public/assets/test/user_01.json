@@ -1,0 +1,31 @@
+{
+    "url": "http://localhost:3000/",
+    "logo": {
+        "small": "http://localhost:3000/assets/img/logo/small_logo.png",
+        "medium": "http://localhost:3000/assets/img/logo/medium_logo.png",
+        "large": "http://localhost:3000/assets/img/logo/large_logo.png"
+    },
+    "metas": {},
+    "user": {
+        "id": "1",
+        "name": "Cléber da Costa",
+        "role": "free_user",
+        "profile": "http://localhost:3000/assets/img/avatar.jpg"
+    },
+    "navbar": {
+        "links": [
+            {
+                "title": "Area do Aluno",
+                "url": "/students"
+            },
+            {
+                "title": "Certificados",
+                "url": "/certificates"
+            },
+            {
+                "title": "Cursos",
+                "url": "/courses"
+            }
+        ]
+    }
+}

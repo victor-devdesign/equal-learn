@@ -35,33 +35,26 @@ function getData() {
     }),
     mode: "no-cors",
   })
-    .then(response => {
-      console.log(response.json());
-      return response.json();
-    })
-    .then((data) => {
-      console.log(data);
-      return data;
-    })
+    .then(res => res.json())
+    .then((data) => { return data; })
     .catch((error) => {
-      return {
-        url: document.location.origin + "/",
-        logo: {
-          small: document.location.origin + "/assets/img/logo/small_logo.png",
-          medium: document.location.origin + "/assets/img/logo/medium_logo.png",
-          large: document.location.origin + "/assets/img/logo/large_logo.png",
-        },
-        metas: {},
-        user: {
-          // id: "1",
-          // name: "Cléber da Costa",
-          // role: "free_user",
-          // profile: document.location.origin + "/assets/img/avatar.jpg",
-          // roles: {},
-        },
-      };
-    });
+      let test = 'user_01';
+      // let test = 'user_02';
+      // let test = 'unlogged_in';
 
+      return fetch('./assets/test/' + test + '.json', {
+        headers: {
+          "Accept": "application/json"
+        }
+      })
+        .then(res => res.json())
+        .then((data) => { return data; })
+        .catch((error) => {
+          console.error(error);
+        });
+
+
+    });
 }
 
 export default function App() {

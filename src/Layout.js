@@ -11,7 +11,7 @@ const Layout = (options) => {
     return (
         <div className="row main-content">
             <div className="col-12">
-                <NavBar logo={data.logo.small} profile={data.user.profile} name={data.user.name} />
+                <NavBar logo={data.logo.small} profile={data.user.profile} name={data.user.name} links={data.navbar.links} />
             </div>
             <div className="col-12">
                 <main>
