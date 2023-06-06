@@ -1,0 +1,30 @@
+/* ---------------------------------------------
+----------------- IMPORTS ----------------------
+--------------------------------------------- */
+/* ---------------------------------------------
+------------------ STYLES ----------------------
+--------------------------------------------- */
+.content-card {
+  padding: 0px;
+}
+.content-card .card-body {
+  padding: 0px;
+}
+.content-card .card-body img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-top-left-radius: 28px;
+  border-top-right-radius: 28px;
+}
+.content-card .card-footer {
+  padding: 12px;
+}
+.content-card .card-footer .card-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.content-card .card-footer .card-text {
+  font-weight: 400;
+  margin-bottom: 0px;
+}

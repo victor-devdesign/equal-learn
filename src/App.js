@@ -42,7 +42,7 @@ function getData() {
       // let test = 'user_02';
       // let test = 'unlogged_in';
 
-      return fetch('./assets/test/' + test + '.json', {
+      return fetch('./assets/test/user/' + test + '.json', {
         headers: {
           "Accept": "application/json"
         }

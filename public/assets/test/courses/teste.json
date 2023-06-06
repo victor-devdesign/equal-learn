@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "img": "https://picsum.photos/200/300?random=1",
+        "title": "Metodologia Digital",
+        "content": "A metodologia digital pode ser usada para implementação de diversos recursos"
+    },
+    {
+        "id": 2,
+        "img": "https://picsum.photos/200/300?random=2",
+        "title": "Programação em Python",
+        "content": "A linguagem Python é uma das mais utilizadas no mundo da programação, sendo assim, é uma das mais procuradas no mercado de trabalho"
+    },
+    {
+        "id": 3,
+        "img": "https://picsum.photos/200/300?random=3",
+        "title": "Programação em C#",
+        "content": "A linguagem C# é uma das mais utilizadas no mundo da programação, sendo assim, é uma das mais procuradas no mercado de trabalho"
+    },
+    {
+        "id": 4,
+        "img": "https://picsum.photos/200/300?random=4",
+        "title": "Programação Web Avançada",
+        "content": "Aprenda técnicas avançadas de programação web e desenvolva sites interativos e dinâmicos"
+    },
+    {
+        "id": 5,
+        "img": "https://picsum.photos/200/300?random=5",
+        "title": "Marketing Digital",
+        "content": "Aprenda estratégias de marketing digital para promover produtos e serviços na era digital"
+    },
+    {
+        "id": 6,
+        "img": "https://picsum.photos/200/300?random=6",
+        "title": "Design Gráfico para Iniciantes",
+        "content": "Domine os fundamentos do design gráfico e crie materiais visuais de alta qualidade"
+    },
+    {
+        "id": 7,
+        "img": "https://picsum.photos/200/300?random=7",
+        "title": "Introdução à Inteligência Artificial",
+        "content": "Explore os conceitos básicos da inteligência artificial e suas aplicações práticas"
+    },
+    {
+        "id": 8,
+        "img": "https://picsum.photos/200/300?random=8",
+        "title": "Gestão de Projetos",
+        "content": "Desenvolva habilidades de gerenciamento de projetos e liderança de equipes"
+    },
+    {
+        "id": 9,
+        "img": "https://picsum.photos/200/300?random=9",
+        "title": "Inglês para Negócios",
+        "content": "Aprimore suas habilidades de comunicação em inglês no contexto empresarial"
+    },
+    {
+        "id": 10,
+        "img": "https://picsum.photos/200/300?random=10",
+        "title": "Empreendedorismo",
+        "content": "Aprenda os princípios fundamentais do empreendedorismo e desenvolva sua mentalidade empresarial"
+    },
+    {
+        "id": 11,
+        "img": "https://picsum.photos/200/300?random=11",
+        "title": "Estratégias de Vendas",
+        "content": "Aprenda técnicas avançadas de vendas e negociação para aumentar suas vendas"
+    },
+    {
+        "id": 12,
+        "img": "https://picsum.photos/200/300?random=12",
+        "title": "Gestão de Pessoas",
+        "content": "Aprenda a gerenciar pessoas e equipes de forma eficaz e desenvolva habilidades de liderança"
+    }
+]
